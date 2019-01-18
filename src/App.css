@@ -1,32 +1,128 @@
 .App {
-  text-align: center;
+	text-align: center;
+	font-size: 2rem;
+	--bgColor: #bdd4df;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.home {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.grid {
+	display: grid;
+	grid-template-columns: repeat(var(--groups), 1fr);
+	grid-template-rows: 3fr repeat(var(--rows), 2fr);
+	background: var(--bgColor);
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	left: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.grid-outer {
+	flex-grow: 1;
+	position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.column,
+.groups {
+	display: contents;
+}
+
+.cell {
+	grid-row: calc(var(--row) + 2);
+	grid-column: calc(var(--group) + 1);
+	position: relative;
+}
+
+.group {
+	grid-row: 1;
+	grid-column: calc(var(--group) + 1);
+	position: relative;
+}
+
+.cell-inner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #a38456;
+	color: white;
+	padding: 0.5em;
+	opacity: 1;
+	transition: all 1s;
+	border-radius: 0.2em;
+}
+
+.groups .cell-inner {
+	background: #eca038;
+}
+
+.cell-inner.answered {
+	opacity: 0.2;
+	transform: translate(-50%, -50%) scale(0.7);
+}
+
+.cell-inner.ofTeam0 {
+	background: #f49e00;
+}
+.cell-inner.ofTeam1 {
+	background: #e53434;
+}
+
+/* OPENED QUESTION */
+
+.openedQuestion {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	z-index: 1;
+	background: #3979b5;
+	color: white;
+	display: flex;
+	flex-direction: column;
+  justify-content: space-around;
+  transition: background 300ms;
+}
+
+.openedQuestion.isCorrect {
+	background: rgb(13, 211, 13);
+}
+.openedQuestion.isWrong {
+	background: rgb(228, 38, 38);
+}
+
+.openedQuestion-content {
+	padding: 5em;
+}
+
+.openedQuestion-label {
+	opacity: 0.7;
+	margin-bottom: 1em;
+}
+.openedQuestion-question {
+	font-size: 1.5em;
+}
+
+/* POINTS */
+.points {
+	display: flex;
+	justify-content: space-around;
+}
+
+.points-team {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.points-team.onTurn {
+	font-weight: bold;
 }
