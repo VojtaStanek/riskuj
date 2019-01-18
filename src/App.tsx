@@ -77,7 +77,7 @@ class App extends Component<{}, AppState> {
 					correctness = Correctness.Correct
 				case 'w':
 					this.setState(state => {
-						if (!state.openQuestion) return state
+						if (!state.openQuestion || state.openedCorrect) return state
 						return {
 							...state,
 							openedCorrect: correctness,
@@ -124,6 +124,34 @@ class App extends Component<{}, AppState> {
 						}
 					}))
 					break
+				case 'ArrowUp':
+					this.setState(state => ({
+						...state,
+						gameState: {
+							...state.gameState,
+							points: {
+								...state.gameState.points,
+								[state.gameState.teamOnTurn]:
+									state.gameState.points[state.gameState.teamOnTurn] + 1000
+							}
+						}
+					}))
+					break
+				case 'ArrowDown':
+					this.setState(state => ({
+						...state,
+						gameState: {
+							...state.gameState,
+							points: {
+								...state.gameState.points,
+								[state.gameState.teamOnTurn]:
+									state.gameState.points[state.gameState.teamOnTurn] - 1000
+							}
+						}
+					}))
+					break
+				default:
+					console.log(`Unknown key ${event.key}`)
 			}
 		})
 	}
