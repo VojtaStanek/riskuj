@@ -31,7 +31,7 @@ export const QUESTIONS: Question[] = [
 		question:
 			'Pokud se na akci používá vozidlo, které není majetkem střediska musíme se řídit směrnicí o proplácení cestovních náhrad. Tento předpis stanovuje, jakou formou má být počítána proplácená částka. Jak se jmenuje formulář, který je třeba vyplnit a který poté považujeme za prvotní doklad?'
 	},
-	{ group: 'Řád', row: 1000, question: 'Jak vypadá rozpočet akce?' },
+	{ group: 'Řád', row: 1000, question: 'Jaké dva sloupěčky máme v rozpočtu?' },
 	{
 		group: 'Řád',
 		row: 2000,
@@ -90,7 +90,7 @@ export const QUESTIONS: Question[] = [
 	{
 		group: 'Pokladní doklad',
 		row: 2000,
-		question: 'Kdo bude kde podepsán u následujícího dokladu?'
+		question: 'Jaké hlavní dvě osoby a kde budou podepsané na výdajovém dokladu?'
 	},
 	{
 		group: 'Pokladní doklad',

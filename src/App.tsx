@@ -43,7 +43,7 @@ const ROWS = QUESTIONS.map(t => t.row)
 	.reduce<number[]>((acc, v) => (acc.includes(v) ? acc : [...acc, v]), [])
 	.sort()
 
-const TEAMS: TeamId[] = ['A', 'B', 'C', 'D']
+const TEAMS: TeamId[] = ['A', 'B', 'C']
 const TEAMS_COUNT = TEAMS.length
 
 enum Correctness {
