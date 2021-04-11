@@ -137,6 +137,6 @@ export const QUESTIONS: Question[] = [
 		group: 'Právo a majetek',
 		row: 5000,
 		question:
-			'Pro naši činnost potřebuje určitý majetek. Co musíme dělat s majetkem každý rok a při jeho změnách (nabytí, zcizení)?'
+			'Pro naši činnost potřebuje určitý majetek. Co musíme dělat s majetkem každý rok a při jeho změnách (nabytí, převod)?'
 	}
 ]
