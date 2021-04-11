@@ -111,30 +111,30 @@ export const QUESTIONS: Question[] = [
 			'Komu typicky dáváme zálohu a jak s ní budeme pracovat v pokladní knize?'
 	},
 	{
-		group: 'Junák v právu a jeho majetek',
+		group: 'Právo a majetek',
 		row: 1000,
 		question: 'Jak obvykle vypadají názvy středisek jako právnických osob?'
 	},
 	{
-		group: 'Junák v právu a jeho majetek',
+		group: 'Právo a majetek',
 		row: 2000,
 		question:
 			'Vyjmenuj alespoň dva základní vnitřní předpisy upravující hospodaření.'
 	},
 	{
-		group: 'Junák v právu a jeho majetek',
+		group: 'Právo a majetek',
 		row: 3000,
 		question:
 			'Spolek, což je právní forma Junáka, se považuje za neziskovou organizaci. Co je touto „neziskovostí“ myšleno?'
 	},
 	{
-		group: 'Junák v právu a jeho majetek',
+		group: 'Právo a majetek',
 		row: 4000,
 		question:
 			'Odkud můžeme čerpat finance pro naši činnost. Vyjmenuj alespoň 4.'
 	},
 	{
-		group: 'Junák v právu a jeho majetek',
+		group: 'Právo a majetek',
 		row: 5000,
 		question:
 			'Pro naši činnost potřebuje určitý majetek. Co musíme dělat s majetkem každý rok a při jeho změnách (nabytí, zcizení)?'

@@ -231,7 +231,7 @@ class App extends Component<{}, AppState> {
 									gameState.teamOnTurn == team ? 'onTurn' : ''
 								}`}
 							>
-								TÝM {team}: ${points}
+								TÝM {team}: {new Intl.NumberFormat('cs-CZ').format(points)}
 							</div>
 						))}
 					</div>
