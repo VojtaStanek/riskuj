@@ -77,14 +77,15 @@ class App extends Component<{}, AppState> {
 					correctness = Correctness.Correct
 				case 'w':
 					this.setState(state => {
-						if (!state.openQuestion || state.openedCorrect) return state
+						if (!state.openQuestion || state.openedCorrect === correctness || state.openedCorrect === Correctness.Correct) return state
+						const goToNext = !(state.openedCorrect === Correctness.Wrong)
 						return {
 							...state,
 							openedCorrect: correctness,
 							// openQuestion: undefined,
 							gameState: {
 								...state.gameState,
-								teamOnTurn: nextTeam(state.gameState.teamOnTurn),
+								...(goToNext ? {teamOnTurn: nextTeam(state.gameState.teamOnTurn)} : {}),
 								points: {
 									...state.gameState.points,
 									[state.gameState.teamOnTurn]:
@@ -117,7 +118,7 @@ class App extends Component<{}, AppState> {
 				case 'n':
 					this.setState(state => ({
 						...state,
-						openQuestion: undefined,
+						// openQuestion: undefined,
 						gameState: {
 							...state.gameState,
 							teamOnTurn: nextTeam(state.gameState.teamOnTurn)
